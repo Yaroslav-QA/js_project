@@ -54,3 +54,40 @@ for (let i = 1; i < 8; i++) {
     console.log(i);
 
 }
+
+//FUNCTIONS!!
+// function declaration
+function showFirstMessage(text) {
+    console.log(text);
+    let num3 = 20;
+}
+
+showFirstMessage("Hello World");
+console.log(num3);
+
+function calc(a, b) {
+    return (a + b);
+}
+
+console.log(calc(4, 3));
+
+function ret() {
+    let number = 50;
+
+    return number;
+}
+
+const anotherNumber = ret();
+console.log(anotherNumber);
+
+// function expression
+const logger = function () {
+    console.log("Hello");
+};
+
+logger();
+
+// arrow function
+
+const calculator = (a, b) => a + b;
+//const calculator = (a, b) => { return a + b };
