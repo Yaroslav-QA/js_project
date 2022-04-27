@@ -125,3 +125,102 @@ metka: for (let i = 0; i < 3; i++) {
         }
     }
 }
+
+for (let i = 2; i < 11; i++) {
+    if (i % 2 != 0) {
+        continue;
+    }
+    console.log(i);
+    
+}
+
+let i = 2;
+while (i < 16) {
+    i++;
+    if (i % 2 == 0) {
+        continue;
+    }
+    console.log(i);
+    
+}
+
+function fifthTask() {
+    const arrayOfNumbers = [];
+    for (let i = 5; i < 11; i++) {
+        arrayOfNumbers[i - 5] = i;
+    }
+    console.log(arrayOfNumbers);
+    return arrayOfNumbers;
+}
+
+fifthTask();
+
+
+const usdCurr = 28;
+const eurCurr = 32;
+const discount = 0.9;
+
+function convert (amount, curr) {
+    return curr * amount;
+}
+
+//convert(500, usdCurr);
+//convert(500, eurCurr);
+
+function promotion(result) {
+    console.log(result * discount);
+}
+
+const res = convert(500, usdCurr);
+promotion(res);
+
+
+
+function doNothing() {};
+console.log(doNothing() === undefined);
+
+
+function sayHello(name) {
+    return "Привет, " + name;
+}
+
+sayHello("Антон");
+
+
+
+function returnNeighboringNumbers(testNumber) {
+    let numbersArray = [];
+    numbersArray[0] = testNumber - 1;
+    numbersArray[1] = testNumber;
+    numbersArray[2] = testNumber + 1;
+    return numbersArray
+}
+
+returnNeighboringNumbers(4);
+
+
+
+function getMathResult(base, count) {
+    let str = "";
+    let result = "";
+    
+    if (typeof(count) !== "number" || count <= 0) {
+        result = base;
+        console.log(result);
+    } else {
+        for (var i = 1; i <= count; i++) {
+            if (i === count) {
+                str += `${base * i}`;
+            } else {
+                str += `${base * i}---`;
+            }
+            
+        }
+        console.log(str);
+        result = str;
+        
+    }
+    return result;
+}
+
+getMathResult(5, "jdhj");
