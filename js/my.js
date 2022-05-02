@@ -224,3 +224,36 @@ function getMathResult(base, count) {
 }
 
 getMathResult(5, "jdhj");
+
+
+const str = "tEst";
+const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log(str[2]);
+
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+console.log(str);
+
+
+const fruit = "Some fruit";
+console.log(fruit.indexOf("fruit"));
+
+
+const logg = "Hello world";
+console.log(logg.slice(6, 11));
+console.log(logg.slice(6));
+console.log(logg.slice(-5, -1));
+
+console.log(logg.substring(6, 11));
+
+console.log(logg.substr(6, 3));
+
+
+const numA = 12.2;
+console.log(Math.round(numA));
+
+const testA = "12.2px";
+console.log(parseInt(testA, 10));
+console.log(parseFloat(testA, 10));
+
+
