@@ -257,3 +257,34 @@ console.log(parseInt(testA, 10));
 console.log(parseFloat(testA, 10));
 
 
+function first() {
+    // do something
+    setTimeout(function () {
+        console.log(1);
+    }, 500);
+}
+
+function second() {
+    console.log(2);
+}
+
+first();
+second();
+
+
+
+function learnJS (lang, callback) {
+    console.log(`I learn: ${lang}`);
+    callback();
+}
+
+function done() {
+    console.log(`This anonymous function`);
+}
+
+
+/* learnJS("JavaScript", function() {
+    console.log(`This anonymous function`);
+}); */
+
+learnJS("JavaScript", done);
