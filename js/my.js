@@ -288,3 +288,146 @@ function done() {
 }); */
 
 learnJS("JavaScript", done);
+
+
+const Projects = $("Form.Fields.Project");
+let numOfProjects = 4;
+console.log(numOfProjects);
+
+numOfProjects--;
+
+console.log(numOfProjects);
+
+
+function countProjectsNumber () {
+    //const Projects = $("Form.Fields.Project");
+    let numOfProjects = 2 - 2;
+        if (numOfProjects > 0) {
+            console.log(numOfProjects);
+            numOfProjects--;
+        } else {
+            numOfProjects = 0;
+        }
+    
+    return numOfProjects;
+}
+
+console.log(countProjectsNumber ());
+
+
+
+
+function minusLastElement () {
+    let testArray = ['a', 'b'];
+    let result = "";
+    if (testArray.length >= 1) {
+        result = testArray[testArray.length - 1];
+    } else {
+        alert("Please select at least one hotel");
+    }
+    return result;
+}
+
+console.log(minusLastElement());
+
+let FormFieldsProject = ['a', 'b', 'c'];
+
+function test() {
+    //const Projects = $("Form.Fields.Project");
+    let numOfProjects = FormFieldsProject.length - 1;
+    let result = [];
+    if (numOfProjects > 0) {
+        result = FormFieldsProject[FormFieldsProject.length - 1];
+    } else {
+        alert("Please select at least one hotel");
+	}
+    return result;
+}
+
+console.log(test());
+
+
+let testString = "Hello";
+console.log(testString.split(" "));
+
+
+
+//Objects
+//const obj = new Object();
+
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        background: 'red'
+    },
+    //adding new method
+    makeTest: function() {
+        console.log("Test");
+    }
+};
+
+options.makeTest();
+//delete options.name;
+//console.log(options);
+
+// This not very elegant
+console.log(options["colors"]["border"]);
+// destructurization
+const {border, bg} = options.colors;
+console.log(border);
+
+let counter = 0;
+for (let key in options) {
+    if (typeof (options[key]) === 'object') {
+        for (let i in options[key]) {
+            console.log(`Property ${i} has value ${options[key][i]}`);
+            counter++;
+        }
+    } else {
+        console.log(`Property ${key} has value ${options[key]}`);
+        counter++;
+    }
+    
+}
+//How many properties
+console.log(counter);
+// get properties from object
+console.log(Object.keys(options));
+// get properties number
+console.log(Object.keys(options).length);
+
+
+//ARRAYS
+const arrTest = [6, 12, 3, 27, 5];
+
+//correct sorting (as numbers)
+arrTest.sort(compareNumbers);
+console.log(arrTest);
+
+function compareNumbers(a, b) {
+    return a - b;
+}
+
+//arrTest.pop();
+//arrTest.push(10);
+
+
+// variant 1
+for (let i = 0; i < arrTest.length; i++) {
+    console.log(arrTest[i]);
+}
+// variant 2
+for (let value of arrTest) {
+    console.log(value);
+}
+// variant 3 - most used
+arrTest.forEach(function(item, i, arrTest) {
+    console.log(`${i}: ${item} inside array ${arrTest}`);
+});
+
+const strTest = prompt('', '');
+const products = strTest.split(', ');
+console.log(products);
