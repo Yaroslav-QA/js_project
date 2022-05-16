@@ -431,3 +431,179 @@ arrTest.forEach(function(item, i, arrTest) {
 const strTest = prompt('', '');
 const products = strTest.split(', ');
 console.log(products);
+
+//Transfer by link/value
+let a = 5,
+    b = a;
+
+b = b + 5;
+
+console.log(b);
+console.log(a);
+
+const obj = {
+    a: 5,
+    b: 1
+};
+
+const copy = obj; //link to obj here!
+copy.a = 10;
+
+console.log(copy);
+console.log(obj);
+
+// cloning object:
+function copyObj (mainObj) {
+    let objCopy = {};
+
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+
+    return objCopy;
+}
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 8,
+        y: 12
+    }
+};
+
+const newNumbers = copyObj(numbers);
+
+newNumbers.a = 10;
+//newNumbers.c.x will be changed because we created shallow copy
+newNumbers.c.x = 33;
+console.log(numbers);
+console.log(newNumbers);
+
+
+
+const numbers2 = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 8,
+        y: 12
+    }
+};
+
+const add = {
+    d: 17,
+    e: 20
+};
+
+console.log(Object.assign(numbers2, add));
+const clone = Object.assign({}, add);
+
+clone.d = 21;
+console.log(clone);
+console.log(numbers2);
+
+
+const oldArray = ['a', 'b', 'c', 'd'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'asdfgh';
+console.log(newArray);
+console.log(oldArray);
+
+//SPREAD operator
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'lj', 'blogger'],
+      internet = [...video, ...blogs, 'facebook'];
+
+console.log(internet);
+
+
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+const num1 = [2, 5, 7];
+
+log(...num1);
+
+
+const array2 = ['a', 'b', 'c'];
+const array3 = [...array2];
+console.log(array3);
+
+const q = {
+    one: 1,
+    two: 2,
+    three: 3
+};
+
+const newQ = {...q};
+
+
+/* const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    }
+}; */
+
+/* function showExperience(plan) {
+    const {lng, prLng, exp} = plan.skills;
+    return exp;
+}
+
+console.log(showExperience(personalPlanPeter)); */
+
+
+/* function showProgrammingLangs(plan) {
+    const programmingLangs = plan.skills.programmingLangs;
+    console.log(programmingLangs);
+    for (key in programmingLangs) {
+
+    }
+
+}
+showProgrammingLangs(personalPlanPeter); */
+
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'fr'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    }
+};
+
+function showExperience(plan) {
+    const {languages} = plan.skills;
+    const eng = languages.includes('eng');
+    return eng;
+}
+
+console.log(showExperience(personalPlanPeter));
+
+const myArray = [
+    {_id: 'ro_ta_7203b6ddf4c8442893974734b61f1e0b_05a760b996da4ff3a1024de673e9d796', primaryDisplay: 'IntercityHotel Berlin Airport'},
+    {_id: 'ro_ta_7203b6ddf4c8442893974734b61f1e0b_124fcc241f1a456a96accd2e7a2a7ce8', primaryDisplay: 'Zleep Madrid Airport'},
+    {_id: 'ro_ta_7203b6ddf4c8442893974734b61f1e0b_9ff6d4aad4fd4fd682766a2f194bfc4e', primaryDisplay: 'ICH Mainz'},
+    {_id: 'ro_ta_7203b6ddf4c8442893974734b61f1e0b_ca9b0e19a62f42529925f3168a9adf4a', primaryDisplay: 'Intercity Herford'}
+];
+
+function showProject (data) {
+    console.log(data[-1][_id]);
+}
+
