@@ -640,3 +640,4 @@ if (switcher) {
 console.log(typeof(Boolean('4')));
 //3)
 console.log(typeof(!!"some text"));
+
